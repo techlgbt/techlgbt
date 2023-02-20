@@ -9,7 +9,9 @@ WorkingDirectory=/home/mastodon/live
 Environment="RAILS_ENV=production"
 Environment="PORT=3000"
 Environment="LD_PRELOAD=libjemalloc.so"
-ExecStart=/home/mastodon/.rbenv/shims/bundle exec puma -C config/puma.rb
+Environment="WEB_CONCURRENCY=8"
+Environment="MAX_THREADS=8"
+ExecStart=/usr/bin/bundle exec puma -C config/puma.rb
 ExecReload=/bin/kill -SIGUSR1 $MAINPID
 TimeoutSec=15
 Restart=always
