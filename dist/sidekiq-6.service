@@ -1,15 +1,17 @@
 [Unit]
-Description=mastodon-streaming
+Description=mastodon-sidekiq
 After=network.target
 
 [Service]
 Type=simple
 User=mastodon
 WorkingDirectory=/home/mastodon/live
-Environment="NODE_ENV=production"
-Environment="PORT=4000"
-Environment="STREAMING_CLUSTER_NUM=1"
-ExecStart=/usr/local/bin/node ./streaming
+Environment="RAILS_ENV=production"
+Environment="DB_POOL=32"
+Environment="MALLOC_ARENA_MAX=2"
+Environment="LD_PRELOAD=libjemalloc.so"
+ExecStart=/usr/bin/bundle exec sidekiq -c 32 -q scheduler
+
 TimeoutSec=15
 Restart=always
 # Proc filesystem
@@ -42,7 +44,8 @@ PrivateMounts=true
 ProtectClock=true
 # System Call Filtering
 SystemCallArchitectures=native
-SystemCallFilter=~@cpu-emulation @debug @keyring @ipc @memlock @mount @obsolete @privileged @resources @setuid
+SystemCallFilter=~@cpu-emulation @debug @keyring @ipc @mount @obsolete @privileged @setuid
+SystemCallFilter=@chown
 SystemCallFilter=pipe
 SystemCallFilter=pipe2
 ReadWritePaths=/home/mastodon/live
