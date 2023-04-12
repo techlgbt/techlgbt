@@ -1,7 +1,7 @@
 #!/bin/bash
-export PATH="/home/mastodon/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export RAILS_ENV=production
+#export PATH="/home/mastodon/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+#export RAILS_ENV=production
 
 #/home/mastodon/live/bin/tootctl statuses remove --days=3
 /home/mastodon/live/bin/tootctl media remove --days 30 --concurrency 100
