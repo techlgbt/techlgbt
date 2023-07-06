@@ -108,7 +108,7 @@ en:
       imports:
         data: CSV file exported from another Mastodon server
       invite_request:
-        text: This will help us review your application
+        text: If you would like to sign up for an account, please input a reason that you would like to join. We require a response of approximately one sentence to filter out spam signups. Please reference the description of the server in some way in your response. Thank you!
       ip_block:
         comment: Optional. Remember why you added this rule.
         expires_in: IP addresses are a finite resource, they are sometimes shared and often change hands. For this reason, indefinite IP blocks are not recommended.
