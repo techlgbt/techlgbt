@@ -1,5 +1,5 @@
 [Unit]
-Description=mastodon-web
+Description=mastodon-sidekiq
 After=network.target
 
 [Service]
@@ -7,12 +7,11 @@ Type=simple
 User=mastodon
 WorkingDirectory=/home/mastodon/live
 Environment="RAILS_ENV=production"
-Environment="PORT=3000"
+Environment="DB_POOL=16"
+Environment="MALLOC_ARENA_MAX=2"
 Environment="LD_PRELOAD=libjemalloc.so"
-Environment="WEB_CONCURRENCY=8"
-Environment="MAX_THREADS=8"
-ExecStart=/usr/bin/bundle exec puma -C config/puma.rb
-ExecReload=/bin/kill -SIGUSR1 $MAINPID
+ExecStart=/usr/bin/bundle exec sidekiq -c 16
+
 TimeoutSec=15
 Restart=always
 # Proc filesystem
