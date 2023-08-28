@@ -588,9 +588,11 @@ GEM
       rspec-expectations (~> 3.10)
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
-    rspec-sidekiq (3.1.0)
-      rspec-core (~> 3.0, >= 3.0.0)
-      sidekiq (>= 2.4.0)
+    rspec-sidekiq (4.0.2)
+      rspec-core (~> 3.0)
+      rspec-expectations (~> 3.0)
+      rspec-mocks (~> 3.0)
+      sidekiq (>= 5, < 8)
     rspec-support (3.11.1)
     rspec_junit_formatter (0.6.0)
       rspec-core (>= 2, < 4, != 2.12.0)
@@ -856,7 +858,7 @@ DEPENDENCIES
   rexml (~> 3.2)
   rqrcode (~> 2.1)
   rspec-rails (~> 5.1)
-  rspec-sidekiq (~> 3.1)
+  rspec-sidekiq (~> 4.0)
   rspec_junit_formatter (~> 0.6)
   rubocop
   rubocop-performance
