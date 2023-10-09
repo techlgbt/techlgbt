@@ -129,7 +129,7 @@ GEM
       concurrent-ruby (~> 1.0, >= 1.0.5)
       redis (>= 1.0, < 6)
     builder (3.2.4)
-    bullet (7.0.7)
+    bullet (7.1.1)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     bundler-audit (0.9.1)
@@ -312,7 +312,7 @@ GEM
     httplog (1.6.2)
       rack (>= 2.0)
       rainbow (>= 2.0.0)
-    i18n (1.12.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     i18n-tasks (1.0.12)
       activesupport (>= 4.0.2)
@@ -406,7 +406,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
     mini_portile2 (2.8.1)
-    minitest (5.17.0)
+    minitest (5.20.0)
     msgpack (1.6.0)
     multi_json (1.15.0)
     multipart-post (2.1.1)
@@ -753,7 +753,7 @@ GEM
     xorcist (1.1.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.6)
+    zeitwerk (2.6.12)
 
 PLATFORMS
   ruby
@@ -770,7 +770,7 @@ DEPENDENCIES
   bootsnap (~> 1.16.0)
   brakeman (~> 5.4)
   browser
-  bullet (~> 7.0)
+  bullet (~> 7.1)
   bundler-audit (~> 0.9)
   capistrano (~> 3.17)
   capistrano-rails (~> 1.6)
