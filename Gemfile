@@ -107,6 +107,8 @@ gem 'rdf-normalize', '~> 0.5'
 
 gem 'private_address_check', '~> 0.5'
 
+gem 'puma-metrics', '~> 1.3'
+
 gem 'opentelemetry-api', '~> 1.2.5'
 
 group :opentelemetry do
