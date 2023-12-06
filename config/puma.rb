@@ -51,5 +51,6 @@ before_worker_boot do
 end
 
 plugin :tmp_restart
+plugin 'metrics'
 
 set_remote_address(proxy_protocol: :v1) if ENV['PROXY_PROTO_V1'] == 'true'
