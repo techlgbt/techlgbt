@@ -102,6 +102,8 @@ gem 'json-ld'
 gem 'json-ld-preloaded', '~> 3.2'
 gem 'rdf-normalize', '~> 0.5'
 
+gem 'puma-metrics', '~> 1.3'
+
 gem 'opentelemetry-api', '~> 1.4.0'
 
 group :opentelemetry do
