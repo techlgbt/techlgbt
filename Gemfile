@@ -106,6 +106,8 @@ gem 'rdf-normalize', '~> 0.5'
 
 gem 'prometheus_exporter', '~> 2.2', require: false
 
+gem 'puma-metrics', '~> 1.3'
+
 gem 'opentelemetry-api', '~> 1.4.0'
 
 group :opentelemetry do
