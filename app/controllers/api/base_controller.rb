@@ -16,6 +16,8 @@ class Api::BaseController < ApplicationController
   before_action :require_authenticated_user!, if: :disallow_unauthenticated_api_access?
   before_action :require_not_suspended!
 
+  after_action :set_userid_header, if: -> { !current_user.nil? }
+
   vary_by 'Authorization'
 
   protect_from_forgery with: :null_session
@@ -29,6 +31,10 @@ class Api::BaseController < ApplicationController
   end
 
   protected
+
+  def set_userid_header
+    response.headers['X-User-ID'] = current_user.account.id.to_s
+  end
 
   def limit_param(default_limit, max_limit = nil)
     return default_limit unless params[:limit]
