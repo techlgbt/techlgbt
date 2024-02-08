@@ -48,7 +48,7 @@ en-GB:
         status:
           attributes:
             reblog:
-              taken: of post already exists
+              taken: of post already exists (unboost likely still processing, wait a moment before reboost)
         terms_of_service:
           attributes:
             effective_date:
