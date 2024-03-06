@@ -276,6 +276,7 @@ class EmojiPickerMenuImpl extends PureComponent {
         <EmojiPicker
           perLine={8}
           emojiSize={22}
+          maxResults={250}
           custom={buildCustomEmojis(custom_emojis)}
           color=''
           emoji=''
