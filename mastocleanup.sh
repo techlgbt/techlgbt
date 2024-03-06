@@ -8,7 +8,7 @@ set -ex
 export RAILS_ENV=production
 export DB_NAME=cleanup
 
-pushd /home/mastodon/live
+pushd $(dirname "$0")
 
 #bundle exec bin/tootctl statuses remove --days=240
 bundle exec bin/tootctl media remove --days 30 --concurrency 100
