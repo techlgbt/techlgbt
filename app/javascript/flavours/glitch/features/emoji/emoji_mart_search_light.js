@@ -62,7 +62,7 @@ function search(value, { emojisToShowFilter, maxResults, include, exclude, custo
     custom = [];
   }
 
-  maxResults = maxResults || 75;
+  maxResults = maxResults || 250;
   include = include || [];
   exclude = exclude || [];
 
