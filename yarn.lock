@@ -2814,7 +2814,7 @@ __metadata:
     css-loader: "npm:^5.2.7"
     cssnano: "npm:^7.0.0"
     detect-passive-events: "npm:^2.0.3"
-    emoji-mart: "npm:emoji-mart-lazyload@latest"
+    emoji-mart: "npm:emoji-mart-lazyload@beta"
     escape-html: "npm:^1.0.3"
     eslint: "npm:^8.41.0"
     eslint-define-config: "npm:^2.0.0"
@@ -7461,16 +7461,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emoji-mart@npm:emoji-mart-lazyload@latest":
-  version: 3.0.1-j
-  resolution: "emoji-mart-lazyload@npm:3.0.1-j"
+"emoji-mart@npm:emoji-mart-lazyload@beta":
+  version: 3.0.1-k
+  resolution: "emoji-mart-lazyload@npm:3.0.1-k"
   dependencies:
     "@babel/runtime": "npm:^7.0.0"
     intersection-observer: "npm:^0.12.0"
     prop-types: "npm:^15.6.0"
   peerDependencies:
     react: ^0.14.0 || ^15.0.0-0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/be673a03292d6a79db38fa0f5ad525a82a642ee5211b8ff32630dfce70988627bb9724695c60f11d635a5631a539beabbddd1185f0986f06890f4266e9cedee2
+  checksum: 10c0/5f8cea0e6a78eafade082edca831d4b6ee9949834d1b3006845871d9301cc0ef3f6150a8b72b12485ef24030234bd4d0da0387d3128832afbb5d45851a364731
   languageName: node
   linkType: hard
 

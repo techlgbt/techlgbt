@@ -68,7 +68,7 @@
     "css-loader": "^5.2.7",
     "cssnano": "^7.0.0",
     "detect-passive-events": "^2.0.3",
-    "emoji-mart": "npm:emoji-mart-lazyload@latest",
+    "emoji-mart": "npm:emoji-mart-lazyload@beta",
     "escape-html": "^1.0.3",
     "exif-js": "^2.3.0",
     "favico.js": "^0.3.10",
