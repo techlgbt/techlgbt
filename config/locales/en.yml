@@ -504,6 +504,7 @@ en:
         policy: Policy
         reason: Public reason
         title: Content policies
+        last_updated: Last Updated
       dashboard:
         instance_accounts_dimension: Most followed accounts
         instance_accounts_measure: stored accounts

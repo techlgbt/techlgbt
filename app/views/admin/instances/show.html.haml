@@ -97,6 +97,10 @@
       %table.table.horizontal-table
         %tbody
           %tr
+            %th= t("admin.instances.content_policies.last_updated")
+            %td
+              %time.formatted{ datetime: @instance.domain_block.updated_at.iso8601, title: l(@instance.domain_block.updated_at) }= l @instance.domain_block.updated_at
+          %tr
             %th= t('admin.instances.content_policies.comment')
             %td= @instance.domain_block.private_comment
           %tr
