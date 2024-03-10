@@ -11,6 +11,9 @@
             %span.comment.public-comment #{t('admin.domain_blocks.public_comment')}: #{instance.domain_block.public_comment}
           - if instance.domain_block.private_comment.present?
             %span.comment.private-comment #{t('admin.domain_blocks.private_comment')}: #{instance.domain_block.private_comment}
+          %span.comment
+            #{t("admin.instances.content_policies.last_updated")}:
+            %i #{l instance.domain_block.updated_at}
         - elsif instance.domain_allow
           = t('admin.accounts.whitelisted')
         - else
