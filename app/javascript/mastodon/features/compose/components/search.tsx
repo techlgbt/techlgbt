@@ -347,7 +347,7 @@ export const Search: React.FC<{
           });
         }
 
-        const couldBeUsername = /^@?[a-z0-9_-]+(@[^\s]+)?$/i.exec(trimmedValue);
+        const couldBeUsername = trimmedValue.match(/^@?(?:\p{L}\p{M}*|[0-9_.-])+(@[^\s]+)?$/iu);
 
         if (couldBeUsername) {
           newQuickActions.push({
