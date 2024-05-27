@@ -69,8 +69,11 @@ class Account < ApplicationRecord
   INSTANCE_ACTOR_ID = -99
 
   USERNAME_RE   = /[a-z0-9_]+([a-z0-9_.-]+[a-z0-9_]+)?/i
-  MENTION_RE    = %r{(?<![=/[:word:]])@((#{USERNAME_RE})(?:@[[:word:].-]+[[:word:]]+)?)}
+  # A more generous matching regex for remote accounts.
+  REMOTE_USERNAME_RE = /(?:\p{L}\p{M}*|[0-9_.-])+/i
+  MENTION_RE    = %r{(?<![=/[:word:]])@((#{REMOTE_USERNAME_RE})(?:@[[:word:].-]+[[:word:]]+)?)}
   URL_PREFIX_RE = %r{\Ahttp(s?)://[^/]+}
+  REMOTE_USERNAME_ONLY_RE = /\A#{REMOTE_USERNAME_RE}\z/i
   USERNAME_ONLY_RE = /\A#{USERNAME_RE}\z/i
   USERNAME_LENGTH_LIMIT = 30
   DISPLAY_NAME_LENGTH_LIMIT = (ENV['MAX_DISPLAY_NAME_CHARS'] || 30).to_i
@@ -102,7 +105,7 @@ class Account < ApplicationRecord
   validates_with UniqueUsernameValidator, if: -> { will_save_change_to_username? }
 
   # Remote user validations, also applies to internal actors
-  validates :username, format: { with: USERNAME_ONLY_RE }, if: -> { (!local? || actor_type == 'Application') && will_save_change_to_username? }
+  validates :username, format: { with: REMOTE_USERNAME_ONLY_RE }, if: -> { (!local? || actor_type == 'Application') && will_save_change_to_username? }
 
   # Remote user validations
   validates :uri, presence: true, unless: :local?, on: :create

@@ -290,7 +290,7 @@ class Search extends PureComponent {
         options.push({ key: 'go-to-hashtag', label: <FormattedMessage id='search.quick_action.go_to_hashtag' defaultMessage='Go to hashtag {x}' values={{ x: <mark>#{trimmedValue.replace(/^#/, '')}</mark> }} />, action: this.handleHashtagClick });
       }
 
-      const couldBeUsername = trimmedValue.match(/^@?[a-z0-9_-]+(@[^\s]+)?$/i);
+      const couldBeUsername = trimmedValue.match(/^@?(?:\p{L}\p{M}*|[0-9_.-])+(@[^\s]+)?$/iu);
 
       if (couldBeUsername) {
         options.push({ key: 'go-to-account', label: <FormattedMessage id='search.quick_action.go_to_account' defaultMessage='Go to profile {x}' values={{ x: <mark>@{trimmedValue.replace(/^@/, '')}</mark> }} />, action: this.handleAccountClick });
