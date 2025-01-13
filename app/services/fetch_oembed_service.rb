@@ -25,7 +25,11 @@ class FetchOEmbedService
     return if html.nil?
 
     @format = @options[:format]
-    page    = Nokogiri::HTML5(html)
+    begin
+      page    = Nokogiri::HTML5(html)
+    rescue Encoding::InvalidByteSequenceError => error
+      page = Nokogiri::HTML5(html, encoding: 'UTF-8')
+    end
 
     if @format.nil? || @format == :json
       @endpoint_url ||= page.at_xpath('//link[@type="application/json+oembed"]|//link[@type="text/json+oembed"]')&.attribute('href')&.value
