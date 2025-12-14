@@ -86,7 +86,7 @@ gem 'sidekiq', '< 9'
 gem 'sidekiq-bulk', '~> 0.2.0'
 gem 'sidekiq-scheduler', '~> 6.0'
 gem 'sidekiq-unique-jobs', '> 8'
-gem 'sidekiq-undertaker', '~> 1.6'
+gem 'sidekiq-undertaker', '~> 1.8'
 gem 'sidekiq_alive', '~> 2.3'
 gem 'simple_form', '~> 5.2'
 gem 'simple-navigation', '~> 4.4'
@@ -231,7 +231,7 @@ gem 'connection_pool', require: false
 gem 'xorcist', '~> 1.1'
 
 gem 'net-http', '~> 0.6.0'
-gem 'rubyzip', '~> 3.0'
+gem 'rubyzip', '~> 2'
 
 gem 'hcaptcha', '~> 7.1'
 
